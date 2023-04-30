@@ -131,8 +131,9 @@ class HOME extends StatelessWidget {
                         ),
                         SizedBox(
                           height: 63,
-                          child: ListView.builder(
+                          child: ListView.separated(
                             scrollDirection: Axis.horizontal,
+    separatorBuilder: (BuildContext context, int index) => const SizedBox(width: 15,),
                             itemCount: homeController
                                 .listCard.value.data!.popularDishes.length,
                             itemBuilder: (BuildContext context, int index) {
