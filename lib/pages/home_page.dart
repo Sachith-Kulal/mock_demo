@@ -225,156 +225,160 @@ class HOME extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Text(
-                                          homeController.listCard.value.data!
-                                              .dishes[index].name,
-                                          style: const TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: const EdgeInsets.only(
-                                              right: 10, left: 6),
-                                          width: 8,
-                                          height: 8,
-                                          child: SvgPicture.asset(
-                                            'assets/svg/vege_icon.svg',
-                                          ),
-                                        ),
-                                        Rating(
-                                            text: homeController
-                                                .listCard
-                                                .value
-                                                .data!
-                                                .dishes[index]
-                                                .rating)
-                                      ],
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.only(top: 9),
-                                      child: Row(
+                                Flexible(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
                                         children: [
-                                          ...homeController.listCard.value
-                                              .data!.dishes[index].equipments
-                                              .map((e) => Row(
-                                                    children: [
-                                                      SizedBox(
-                                                        height: 23,
-                                                        width: 23,
-                                                        child: Column(
-                                                          children: [
-                                                            SvgPicture.asset(
-                                                              'assets/svg/refrigerator_icon.svg',
-                                                              height: 12,
-                                                              width: 7,
-                                                            ),
-                                                            Text(
-                                                              e,
-                                                              textAlign: TextAlign.left,
-                                                              style: const TextStyle(
-                                                                fontSize: 4,
-                                                                fontFamily: "Open Sans",
-                                                                letterSpacing: 0.08,
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                      ),
-                                                      const SizedBox(
-                                                        width: 8.5,
-                                                      ),
-                                                    ],
-                                                  ))
-                                              .toList(),
-                                          const SizedBox(
-                                            height: 15,
-                                            width: 1,
-                                            child: Divider(
-                                              thickness: 24,
-                                              color: ColorConstant.gray,
+                                          Text(
+                                            homeController.listCard.value.data!
+                                                .dishes[index].name,
+                                            style: const TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w600,
                                             ),
                                           ),
                                           Container(
                                             margin: const EdgeInsets.only(
-                                                left: 15.5),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                const Text(
-                                                  'Ingredients',
-                                                  style: TextStyle(
-                                                    fontSize: 6,
-                                                    fontWeight:
-                                                        FontWeight.bold,
-                                                    letterSpacing: 0.12,
-                                                  ),
-                                                ),
-                                                const SizedBox(
-                                                  height: 2,
-                                                ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    Get.to(const Detail());
-                                                  },
-                                                  child: Row(
-                                                    children: const [
-                                                      Text(
-                                                        'View list',
-                                                        textAlign:
-                                                            TextAlign.left,
-                                                        style: TextStyle(
-                                                          fontFamily:
-                                                              'Open Sans',
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontSize: 5,
-                                                          height: 1.2,
-                                                          letterSpacing: 0.1,
-                                                          color: ColorConstant
-                                                              .orange100,
-                                                        ),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 2,
-                                                      ),
-                                                      Icon(
-                                                        Icons
-                                                            .arrow_forward_ios,
-                                                        size: 3,
-                                                        color:
-                                                            Color(0xFFFF8800),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                              ],
+                                                right: 10, left: 6),
+                                            width: 8,
+                                            height: 8,
+                                            child: SvgPicture.asset(
+                                              'assets/svg/vege_icon.svg',
                                             ),
-                                          )
+                                          ),
+                                          Rating(
+                                              text: homeController
+                                                  .listCard
+                                                  .value
+                                                  .data!
+                                                  .dishes[index]
+                                                  .rating)
                                         ],
                                       ),
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.only(top: 10),
-                                      child: Text(
-                                        homeController.listCard.value.data!
-                                            .dishes[index].description,
-                                        textAlign: TextAlign.left,
-                                        style: const TextStyle(
-                                            fontSize: 8,
-                                            fontWeight: FontWeight.normal,
-                                            letterSpacing: 0.16,
-                                            color: ColorConstant.gray100),
+                                      Container(
+                                        margin: const EdgeInsets.only(top: 9),
+                                        child: Row(
+                                          children: [
+                                            ...homeController.listCard.value
+                                                .data!.dishes[index].equipments
+                                                .map((e) => Row(
+                                                      children: [
+                                                        SizedBox(
+                                                          height: 23,
+                                                          width: 23,
+                                                          child: Column(
+                                                            children: [
+                                                              SvgPicture.asset(
+                                                                'assets/svg/refrigerator_icon.svg',
+                                                                height: 12,
+                                                                width: 7,
+                                                              ),
+                                                              Text(
+                                                                e,
+                                                                textAlign: TextAlign.left,
+                                                                style: const TextStyle(
+                                                                  fontSize: 4,
+                                                                  fontFamily: "Open Sans",
+                                                                  letterSpacing: 0.08,
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                        const SizedBox(
+                                                          width: 8.5,
+                                                        ),
+                                                      ],
+                                                    ))
+                                                .toList(),
+                                             Container(
+                                              height: 10,
+                                              width: 1,
+                                               margin: const EdgeInsets.only(top: 6),
+                                              child: const Divider(
+                                                thickness: 24,
+                                                color: ColorConstant.gray,
+                                              ),
+                                            ),
+                                            Container(
+                                              margin: const EdgeInsets.only(
+                                                  left: 15.5),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  const Text(
+                                                    'Ingredients',
+                                                    style: TextStyle(
+                                                      fontSize: 6,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      letterSpacing: 0.12,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(
+                                                    height: 2,
+                                                  ),
+                                                  GestureDetector(
+                                                    onTap: () {
+                                                      Get.to(const Detail());
+                                                    },
+                                                    child: Row(
+                                                      children: const [
+                                                        Text(
+                                                          'View list',
+                                                          textAlign:
+                                                              TextAlign.left,
+                                                          style: TextStyle(
+                                                            fontFamily:
+                                                                'Open Sans',
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                            fontSize: 5,
+                                                            height: 1.2,
+                                                            letterSpacing: 0.1,
+                                                            color: ColorConstant
+                                                                .orange100,
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 2,
+                                                        ),
+                                                        Icon(
+                                                          Icons
+                                                              .arrow_forward_ios,
+                                                          size: 3,
+                                                          color:
+                                                              Color(0xFFFF8800),
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                      Flexible(child: Container(
+                                        margin: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          homeController.listCard.value.data!
+                                              .dishes[index].description,
+                                          textAlign: TextAlign.left,
+                                          style: const TextStyle(
+                                              fontSize: 8,
+                                              fontWeight: FontWeight.normal,
+                                              letterSpacing: 0.16,
+                                              color: ColorConstant.gray100),
+                                        ),
+                                      ),)
+
+                                    ],
+                                  ),
                                 ),
                                 const SizedBox(
                                   width: 24,
